@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>{% block title %}Vincent Kiplangat{% endblock %}</title>
+  {% load static %}
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/profilepic.jpeg' %}" rel="icon">
+  <link href="{% static 'img/profilepic.jpeg' %}" rel="apple-touch-icon">
+
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Poppins:wght@100;400;700&family=Raleway:wght@100;400;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+</head>
+
+<body class="index-page">
+{% block navbar %}
+  <!-- Header -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="{% url 'index' %}" class="logo d-flex align-items-center">
+        <h1 class="sitename">VINCENT KIPLANGAT</h1>
+      </a>
+
+     <nav id="navmenu" class="navmenu">
+  <ul>
+    <li><a href="{% url 'index' %}" class="{% if request.path == '/' %}active{% endif %}">Home</a></li>
+    <li><a href="{% url 'about' %}" class="{% if request.path == '/about/' %}active{% endif %}">About</a></li>
+    <li><a href="{% url 'resume' %}" class="{% if request.path == '/resume/' %}active{% endif %}">Resume</a></li>
+    <li><a href="{% url 'services' %}" class="{% if request.path == '/services/' %}active{% endif %}">Services</a></li>
+    <li><a href="{% url 'portfolio' %}" class="{% if request.path == '/portfolio/' %}active{% endif %}">Portfolio</a></li>
+    <li class="dropdown">
+      <a href="#" class="{% if request.path == '/dropdown/' %}active{% endif %}"><span>Videos</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+      <ul>
+        <li><a href="#" class="{% if request.path == '/dropdown1/' %}active{% endif %}">One</a></li>
+        <li class="dropdown">
+          <a href="#" class="{% if request.path == '/deep-dropdown/' %}active{% endif %}"><span>Two</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+            <li><a href="#" class="{% if request.path == '/deep-dropdown1/' %}active{% endif %}">Deep 2</a></li>
+            <li><a href="#" class="{% if request.path == '/deep-dropdown2/' %}active{% endif %}">Deep 2</a></li>
+            <li><a href="#" class="{% if request.path == '/deep-dropdown3/' %}active{% endif %}">Deep 2</a></li>
+          </ul>
+        </li>
+        <li><a href="#" class="{% if request.path == '/dropdown2/' %}active{% endif %}">Three</a></li>
+      </ul>
+    </li>
+    <li><a href="{% url 'contact' %}" class="{% if request.path == '/contact/' %}active{% endif %}">Contact</a></li>
+  </ul>
+  <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+</nav>
+
+    </div>
+  </header>
+{% endblock %}
+  <!-- Main Content -->
+  <main class="main">
+    {% block content %}
+
+    {% endblock %}
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer dark-background">
+    <div class="container">
+      <h3 class="sitename">Vincent's Portfolio</h3>
+      <p>Do you need my services? I’d love to help bring your ideas to life! Reach me through:</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://x.com/Kimaswai_j"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61556797613371"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/steps_to_self_realisation"><i class="bi bi-instagram"></i></a>
+        <a href="www.linkedin.com/in/brand-vincent-kiplangat-376b21295"><i class="bi bi-linkedin"></i></a>
+        <a href="+254112874286"><i class="bi bi-whatsapp"></i></a>
+      </div>
+      <button id="theme-toggle" class="btn-theme">🌙 Dark Mode</button>
+
+      <div class="container">
+        <div class="copyright">
+          <span>Copyright</span> <strong class="px-1 sitename">Vincent Kiplangat</strong> <span>All Rights Reserved</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+<script src="{% static 'vendor/aos/aos.js' %}"></script>
+<script src="{% static 'vendor/typed.js/typed.umd.js' %}"></script>
+<script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+<script src="{% static 'vendor/waypoints/noframework.waypoints.js' %}"></script>
+<script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static 'vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+
+<!-- Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+<!-- Script to ensure mobile responsiveness -->
+<script>
+  // Activate Bootstrap's responsive navigation (hamburger menu) on smaller screens
+  document.addEventListener('DOMContentLoaded', function() {
+    var menuToggle = document.querySelector('.navbar-toggler');
+    var navbar = document.querySelector('.navbar-collapse');
+
+    // Ensure proper toggle of navbar on mobile
+    if (menuToggle && navbar) {
+      menuToggle.addEventListener('click', function() {
+        navbar.classList.toggle('show');
+      });
+    }
+  });
+
+  // Add smooth scrolling for internal links (optional, based on design)
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  // Optional: Add viewport meta tag to ensure proper scaling on mobile devices
+  if (window.innerWidth < 768) {
+    let metaTag = document.createElement('meta');
+    metaTag.name = "viewport";
+    metaTag.content = "width=device-width, initial-scale=1.0";
+    document.head.appendChild(metaTag);
+  }
+
+</script>
+
+<style>
+  /* Default Light Mode Styles */
+body {
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+/* Optional: Style for the Button */
+.btn-theme {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.btn-theme:hover {
+  background-color: #0056b3;
+}
+
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const toggleButton = document.getElementById("theme-toggle");
+  const body = document.body;
+
+  // Check if dark mode was previously enabled
+  if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark-mode");
+    toggleButton.textContent = "☀️ Light Mode";
+  }
+
+  toggleButton.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+    // Update button text based on the current mode
+    if (body.classList.contains("dark-mode")) {
+      toggleButton.textContent = "☀️ Light Mode";
+      localStorage.setItem("theme", "dark");
+    } else {
+      toggleButton.textContent = "🌙 Dark Mode";
+      localStorage.setItem("theme", "light");
+    }
+  });
+});
+
+</script>
+
+
+</body>
+
+</html>

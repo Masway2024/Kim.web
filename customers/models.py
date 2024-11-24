@@ -1,31 +1,28 @@
 from django.db import models
 
-# Create your models here.
-
-from django.db import models
-
-class ContactMessage(models.Model):
+# ContactMessages model
+class ContactMessages(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     subject = models.CharField(max_length=200)
     message = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)  # Stores the timestamp when the message is created
+    created_at = models.DateTimeField(auto_now_add=True)  # Timestamp when message is created
 
     def __str__(self):
         return f"{self.name} - {self.subject}"
 
-# models.py
-from django.db import models
 
+# WebsiteVisit model
 class WebsiteVisit(models.Model):
     visit_time = models.DateTimeField(auto_now_add=True)
-    user_ip = models.CharField(max_length=100)  # Optionally store the user's IP address
-    user_agent = models.CharField(max_length=255, blank=True)  # Optionally store user agent
+    user_ip = models.CharField(max_length=45)  # Adjusted for IPv4 and IPv6
+    user_agent = models.CharField(max_length=255, blank=True)  # Optional user agent
 
     def __str__(self):
         return f"Visit on {self.visit_time} from {self.user_ip}"
 
-# models.py
+
+# CVDownload model
 class CVDownload(models.Model):
     count = models.IntegerField(default=0)
 
